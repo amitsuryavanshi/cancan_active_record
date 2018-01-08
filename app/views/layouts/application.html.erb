@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CancanActiveRecord</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div>
+  		<% if current_user %> 
+  			<%= link_to "Log out #{current_user.email}", destroy_user_session_path, method: :delete  %>
+  		<%end%>
+  	</div>
+  	<div><td><%= link_to 'Home', root_path %></td></div>
+    <%= yield %>
+  </body>
+</html>
